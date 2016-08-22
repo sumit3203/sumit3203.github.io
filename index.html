@@ -40,8 +40,9 @@ like filters and machine learning frameworks like active learning, multi-instanc
 <a id="Session-Screen" class="anchor" href="#Session-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Session Screen</h3>
 <p>Session is a provision for storing project data in the session file. It save the state of the system. First image illustrates the window for Session Screen. Session screen will load the existing(Previous) session of the project. 
 It provide you the option to load the filter, Feature and learning Data. The "Choose Session File" button is used for loading session file from the local file system. The whole meta-data of the project will be saved in the same directory as selected by the user.
-The session file must be in JSON format</p>
+The session file must be in JSON format.The second image shows the window for browsing session file on the local file system:</p>
 <p><img src="images/SessionScreen.png"> &nbsp;&nbsp;&nbsp;<img src="images/LOADSESSION.png"></p>
+<p>Code implementing the loading of session file can be found in the getMetaInfo method from the io package.</p>
 <pre><code>
 	public MetaInfo getMetaInfo() {
 		if(metaInfo==null){
@@ -84,6 +85,8 @@ The session file must be in JSON format</p>
       </footer>
 
     </section>
+<h1>
+<a id="open-bugs" class="anchor" href="#open-bugs" aria-hidden="true"><span class="octicon octicon-link"></span></a>OPEN BUGS</h1>
 
   
   </body>
