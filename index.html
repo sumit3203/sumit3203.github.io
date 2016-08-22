@@ -69,12 +69,16 @@ The session file must be in JSON format.The second image shows the window for br
 </code></pre>
 <p>As can be seen from the "ObjectMapper" in the code, the session file was mapped using the Jackson API, version 2.3.1. </p>
 <h3>
-<a id="Filter-Screen" class="anchor" href="#Filter-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Screen</h3>
+<a id="Filter-Framework" class="anchor" href="#Filter-Framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Framework</h3>
+<p>Filter Framework is responsible for automatic loading of Filters. 
+It will load all the filters those have implemented "IFilter" interface. 
+ </p>
 <p>Active Segmentation Filters Screen<img src="images/FilterScreen.png"> </p>
 <li>The right black marked box is used to enable the unselected filters. User need to double click on filter name to enable it </li>
 <li>The Settings for each filter is provided in the centre along with the shape of filter </li>
 <li>Filters process is started using the "Compute" button.</li>
-<li>The "View" button is used to view the filters result for each image slice . </li>
+<li>Filters Meta Data is dumped using the "Save" button.</li>
+<li>The "View" button is used to view the filters result for each image slice. </li>
 <li>The "Default" button is used to set the set default settings for the filter as provided by the developers .</li>
 </ul>
 <h3>
