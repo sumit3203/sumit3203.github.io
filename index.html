@@ -39,8 +39,8 @@ like filters and machine learning frameworks like active learning, multi-instanc
 <h1>
 <a id="Session-Screen" class="anchor" href="#Session-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Session Screen</h1>
 <p>Session is a provision for storing project data in the session file. It save the state of the system. First image illustrates the window for Session Screen. Session screen will load the existing(Previous) session of the project. 
-It provide you the option to load the filter, feature and learning Data. The "Choose Session File" button is used for loading session file from the local file system. The whole meta-data of the project will be saved in the same directory as selected by the user.
-The session file must be in JSON format.The second image shows the window for browsing session file on the local file system:</p>
+It provide you the option to load the filter, feature and learning data. The "Choose Session File" button is used for loading session file from the local file system. The whole meta-data of the project will be saved in the same directory as selected by the user.
+The session file must be in "JSON" format.The second image shows the window for browsing session file on the local file system:</p>
 <p><img src="images/SessionScreen.png"> &nbsp;&nbsp;&nbsp;<img src="images/LOADSESSION.png"></p>
 <p>Code implementing the loading of session file can be found in the "getMetaInfo" method from the "io" package.</p>
 <pre><code>
@@ -68,9 +68,7 @@ The session file must be in JSON format.The second image shows the window for br
 
 </code></pre>
 <p>As can be seen from the "ObjectMapper" in the code, the session file was mapped using the Jackson API, version 2.3.1.</p>
-<p>The following code shows the format of session file for filters.FilterList consists of meta data information related to all the filters 
-which are currently available in active segmentation. Each element in the list will give information about individual Filter.
- The key field in Filter is FilterName that will be unique for every filter. Filter will also consist of settings in key- value pair format.</p>
+<p>The following code shows the format of session file for filters. FilterList consists of meta data information related to all the filters which are currently available in active segmentation. Each element in the list will give information about individual Filter. The key field in Filter is FilterName that will be unique for every filter. Filter will also consist of settings in key- value pair format.</p>
 <pre><code>
 	{
 		"FilterList": [
@@ -83,15 +81,15 @@ which are currently available in active segmentation. Each element in the list w
 </code></pre>
 <h1>
 <a id="Filter-Framework" class="anchor" href="#Filter-Framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Framework</h1>
-<p>Filter Framework is responsible for automatic loading of Filters.It automatically finds all JAR 
+<p>Filter Framework is responsible for automatic loading of filters.It automatically finds all JAR 
   files in the path and first level of subdirectories and those have implemented "IFilter" interface. 
  </p>
 <p>Active Segmentation Filters Screen<img src="images/FilterScreen.png"> </p>
 <ul>
 <li>The right black marked box is used to enable the unselected filters. User need to double click on filter name to enable it </li>
-<li>The Settings for each filter is provided in the centre along with the shape of filter </li>
+<li>The settings for each filter is provided in the centre along with the shape of filter </li>
 <li>Filters process is started using the "COMPUTE" button.</li>
-<li>Filters Meta Data is dumped using the "SAVE" button.</li>
+<li>Filters meta data is dumped using the "SAVE" button.</li>
 <li>The "View" button is used to view the filters result for each image slice. </li>
 <li>The "Default" button is used to set the set default settings for the filter as provided by the developers .</li>
 </ul>
