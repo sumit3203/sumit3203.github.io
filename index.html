@@ -39,7 +39,7 @@ like filters and machine learning frameworks like active learning, multi-instanc
 <h1>
 <a id="Session-Screen" class="anchor" href="#Session-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Session Screen</h1>
 <p>Session is a provision for storing project data in the session file. It save the state of the system. First image illustrates the window for Session Screen. Session screen will load the existing(Previous) session of the project. 
-It provide you the option to load the filter, Feature and learning Data. The "Choose Session File" button is used for loading session file from the local file system. The whole meta-data of the project will be saved in the same directory as selected by the user.
+It provide you the option to load the filter, feature and learning Data. The "Choose Session File" button is used for loading session file from the local file system. The whole meta-data of the project will be saved in the same directory as selected by the user.
 The session file must be in JSON format.The second image shows the window for browsing session file on the local file system:</p>
 <p><img src="images/SessionScreen.png"> &nbsp;&nbsp;&nbsp;<img src="images/LOADSESSION.png"></p>
 <p>Code implementing the loading of session file can be found in the "getMetaInfo" method from the "io" package.</p>
@@ -67,9 +67,10 @@ The session file must be in JSON format.The second image shows the window for br
 	}
 
 </code></pre>
-<p>As can be seen from the "ObjectMapper" in the code, the session file was mapped using the Jackson API, version 2.3.1.
- The format of session file is in the following code</p>
-
+<p>As can be seen from the "ObjectMapper" in the code, the session file was mapped using the Jackson API, version 2.3.1.</p>
+<p>The following code shows the format of session file for filters.FilterList consists of meta data information related to all the filters 
+which are currently available in active segmentation. Each element in the list will give information about individual Filter.
+ The key field in Filter is FilterName that will be unique for every filter. Filter will also consist of settings in key- value pair format.</p>
 <pre><code>
 	{
 		"FilterList": [
