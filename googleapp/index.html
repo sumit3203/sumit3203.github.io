@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Active Segmentation</title>
+    <title>Car Rental Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,8 +11,8 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Active Segmentation</h1>
-        <h2 class="project-tagline">Active Segmentation Plugin for ImageJ - GSOC 2016</h2>
+      <h1 class="project-name">Car Rental Application</h1>
+        <h2 class="project-tagline">Car Rental Application Using Google App Engine</h2>
       <a href="https://github.com/sumit3203/GOOGLESUMMERCODE2016" class="btn">View on GitHub</a>
       <a href="https://github.com/sumit3203/GOOGLESUMMERCODE2016/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/sumit3203/GOOGLESUMMERCODE2016/tarball/master" class="btn">Download .tar.gz</a>
@@ -23,113 +23,32 @@
 <a id="developers" class="anchor" href="#developers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developers</h1>
 
 <p>Student: <a href="sumit.3203@gmail.com">Sumit Kumar Vohra</a><br>
-Mentor: <a href="dimiterpp@gmail.com">Dimiter Prodanov</a><br>
 
-<h1>
-<a id="organization" class="anchor" href="#organization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Organization:</h1>
-
-<p><a href="http://incf.org">International Neuroinformatics Coordinating Facility</a>   </p>
 
 <h1>
 <a id="project-description" class="anchor" href="#project-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project description</h1>
 
-<p>Active Segmentation plugin is the redesign of existing Trainable Weka Segmentation (TWS) of ImageJ.  
-The platform was developed in the context of GSOC 2016. Active Segmentation was developed with the main goal of providing a general purpose workbench that would allow biologists to access 
-state-of-the-art techniques in machine learning to improve their image segmentation results.
-The Active Segmentation provides generic functionality and user friendly interface so that the user can include the state of the art filters and 
-machine learning frameworks from the WEKA library:
+<p>Google App Engine is the Platform-as-a-Service (PaaS) platform for traditional web applications. It provide clean separation between 
+computation and storage. This project demonstrates the various features of Google App Engine. It demonstrates the following concepts
 <ul>
-<li>Active learning.</li>
-<li>Multi-instance learning designed by third party in a robust manner </li>
+<li>Mega Store.</li>
+<li>Data Model. </li>
+<li>JPA. </li>
+<li>Transactions. </li>
 </ul>
-The platform is still under development although the main functionality has been completed.
 </p>
 <h1>
-<a id="Session-Screen" class="anchor" href="#Session-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Session Screen</h1>
-<p>Session is a provision for storing project data in the session file. It save the state of the system. First image illustrates the window for Session Screen. Session screen will load the existing(Previous) session of the project. 
-It provide you the option to load the filter, feature and learning data. The "Choose Session File" button is used for loading session file from the local file system. The whole meta-data of the project will be saved in the same directory as selected by the user.
-The session file must be in "JSON" format.The second image shows the window for browsing session file on the local file system:</p>
-<p><img src="images/SessionScreen.png"> &nbsp;&nbsp;&nbsp;<img src="images/LOADSESSION.png"></p>
-<p>Code implementing the loading of session file can be found in the "getMetaInfo" method from the "io" package.</p>
-<pre><code>
-	public MetaInfo getMetaInfo() {
-		if(metaInfo==null){
-			ObjectMapper mapper = new ObjectMapper();
-			try {
-				metaInfo= mapper.readValue(new File(path+Common.FILENAME), MetaInfo.class);
-				originalImage= IJ.openImage(metaInfo.getPath()+Common.TRAININGIMAGE+Common.TIFFORMAT);
-				return metaInfo;
-
-			} catch (JsonGenerationException e) {
-				e.printStackTrace();
-			} catch (JsonMappingException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			metaInfo= new MetaInfo();
-			metaInfo.setPath(path);
-		}
-		return metaInfo;
-	}
-
-</code></pre>
-<p>As can be seen from the "ObjectMapper" in the code, the session file was mapped using the Jackson API, version 2.3.1.</p>
-<p>The following code shows the format of session file for filters. FilterList consists of meta data information related to all the filters which are currently available in active segmentation. Each element in the list will give information about individual Filter. The key field in Filter is FilterName that will be unique for every filter. Filter will also consist of settings in key- value pair format.</p>
-<pre><code>
-	{
-		"FilterList": [
-		{"Filter":"FilterName1","Setting1":"true","Setting2":"2","Setting3":"false", "FileList": "FilterName1.tif"},
-		{"Filter":"FilterName2","Setting1":"true","Setting2":"2",
-		"FileList": "FilterName2.tif"}
-		]
-		
-	}
-</code></pre>
-<h1>
-<a id="Filter-Framework" class="anchor" href="#Filter-Framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter Framework</h1>
-<p>Filter Framework is responsible for automatic loading of filters.It automatically finds all JAR 
-  files in the path and first level of subdirectories and those have implemented "IFilter" interface. 
- </p>
-<p>Active Segmentation Filters Screen<img src="images/FilterScreen.png"> </p>
-<ul>
-<li>The right black marked box is used to enable the unselected filters. User need to double click on filter name to enable it </li>
-<li>The settings for each filter is provided in the centre along with the shape of filter </li>
-<li>Filters process is started using the "COMPUTE" button.</li>
-<li>Filters meta data is dumped using the "SAVE" button.</li>
-<li>The "View" button is used to view the filters result for each image slice. </li>
-<li>The "Default" button is used to set the set default settings for the filter as provided by the developers .</li>
-</ul>
+<a id="Mega-store" class="anchor" href="#Mega-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mega Store</h1>
 
 <h1>
-<a id="Feature-Screen" class="anchor" href="#Feature-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature Screen</h1>
-<p>Feature Screen of the active segmentation is very similar to the TWS(Trainable Weka Segmentation). It will start with two classes i.e 
-Binary Classification   
- </p>
-<p>Active Segmentation Features Screen<img src="images/FeatureScreen.png"></p>
-<ul>
-<li>The Configure button is used to go "Class Screen". The details regarding the class screen is discussed in the next section</li>
-<li>The user can add region of interest to class using "class button" i.e BCK, ASTRO etc.</li>
-<li>As seen in "Red Box in Feature Screen", the user can also upload or download region of interest to class using "upload or download buttons" </li>
-<li>As seen in "Box 1 in Feature Screen", It will show all the ROI's belong to current slice.
-The user can delete the region of interest by double click on particular ROI.</li>
-<li>As seen in "Box 2 in Feature Screen", It will show all the ROI's belong to class.
-The user can delete the region of interest by double click on particular ROI.</li>
-<li>Meta Data is dumped using the "SAVE" button.</li>
-<li>Learning is started using the "COMPUTE" button. Once the learning is completed, The "overlay image" will be generated</li>
-<li>Meta Data is dumped using the "SAVE" button.</li>
-<li>The "TOGGLE" button is used to switch between "overlay image" and "original image". </li>
-</ul>
+<a id="Data-Model" class="anchor" href="#Data-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data-Model</h1>
 
 <h1>
-<a id="Configure-Screen" class="anchor" href="#Configure-Screen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure Screen</h1>
-Configure screen is used to configure classes. The user can add,update or delete classes. The default classes will be two.
-<ul>
-<li>The user can add new class using "ADD CLASS" button.</li>
-<li>In order to delete the class,the user have to select the class using checkbox and then click "DELETE" button. </li>
-<li>The user can change the color of the class using "COLOR" button.</li>
-</ul>
+<a id="JPA" class="anchor" href="#JPA" aria-hidden="true"><span class="octicon octicon-link"></span></a>JPA</h1>
+
+<h1>
+<a id="Transactions" class="Transactions" href="#JPA" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transactions</h1>
+
 <p><img src="images/ClassScreen.png">&nbsp;&nbsp;<img src="images/COLOR.png" width="400"></p>
 
       <footer class="site-footer">
