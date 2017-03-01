@@ -38,18 +38,23 @@ computation and storage. This project demonstrates the various features of Googl
 </ul>
 </p>
 <h1>
-<a id="Mega-store" class="anchor" href="#Mega-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mega Store</h1>
-
-<h1>
-<a id="Data-Model" class="anchor" href="#Data-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data-Model</h1>
-
+<a id="Mega-store" class="anchor" href="#Mega-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mega Store and Data Model</h1>
+<p>Mega Store is distributed storage system heavily rely on Big data table, Paxos and Chubby lock service for loosely coupled System
+Mega Store have strongly typed schema and data is presented by entities. The Primary key of Entity is different from Java EE Primary Key.
+Each entity is mapped to single big data row. It uses the hierarchical persistence model for each entity group. It is no sql data storage.
+It provide strong consistency within entity group where as loose consistency across entity group. 
+</p>
 <h1>
 <a id="JPA" class="anchor" href="#JPA" aria-hidden="true"><span class="octicon octicon-link"></span></a>JPA</h1>
-
+<p>
+It provides object-relational mapping from RDBMS to NoSQL. It provide limited Support for Java Persistence API. It does not 
+allow Join, Aggregation and polymorphic queries. It does not allow JPQL queries. All the queries are served by predefined index. 
+We cannot use container manager entity manager with mega store. We have to manually create and close entity manager .
+</p>
 <h1>
-<a id="Transactions" class="Transactions" href="#JPA" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transactions</h1>
-
-<p><img src="images/ClassScreen.png">&nbsp;&nbsp;<img src="images/COLOR.png" width="400"></p>
+<a id="Transactions" class="Transactions" href="#Transactions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transactions</h1>
+It also limits the transaction support. There is no container managed transactions.Single transaction cannot create or operate on more than one root entity.
+There is no support for JTA in Google app Engine. Transactions does not contain any knowledge about entity group.
 
       <footer class="site-footer">
          <span class="site-footer-owner"><a href="">Active Segmentation</a> is maintained by <a href="https://github.com/dorugucea91">sumit3203</a>.</span>
