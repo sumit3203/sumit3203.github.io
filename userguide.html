@@ -75,14 +75,11 @@
                     <a href="#">
                         <div class="ui button">Installation</div>
                     </a>
-                    <a href="#">
+                    <a href="userguide.html">
                         <div class="ui button">User Guide</div>
                     </a>
 					<a href="#">
                         <div class="ui button">Examples</div>
-                    </a>
-					<a href="screen.html">
-                        <div class="ui button">Screens</div>
                     </a>
 					<a href="#">
                         <div class="ui button">API</div>
@@ -99,62 +96,127 @@
         <div class="ui grid">
             <div class="ui row">
                 <!-- Main Blog Content -->
-                <div class="twelve wide column" role="content">
+                <div class="main container" role="content">
                        <hr />
                     <article>
-                        <h3><a href="#">Main Screen</a></h3>
-                      
+					    <h3><a href="#">Create New Project</a></h3>     
+                        <p>This Screen allows the user to create new segmentation and classification project. There are few mandatory fields(*) like Project Name, Directory Name,
+                          and Training Image. The idea behind creating the project is that all the related data will be stored in specific project directory and can be loaded easily
+						  </p>						  
+                    						
                         <div class="ui grid">
                             <div class="ui row">
                                 <div class="eight wide column">
-                                    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                                    <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-                                </div>
+                                   <img src="images/active/mainscreen.png" width="390"  />                   
+								</div>
                                 <div class="eight wide column">
-                                    <img src="images/active/mainscreen.png" />
+                                    <img src="images/active/createproject.png" width="470" />
                                 </div>
                             </div>
-                        </div>
-
-                       
+					<div class="sixteen wide column">						
+					<ul>
+					<li><div class="ui label">Project Name</div> The project file and directory will be created with same name. </li>
+					<br>
+					<li><div class="ui label">Project Desc</div> This is optional field to store some project related information. </li>
+					<br>
+					<li><div class="ui label">Project Type</div> This field have two options i.e Segmentation and Classification. The user must select this field depending on their task whether					
+					they want to perform segmentation or classification. The filters will also be loaded according so its very important to select the correct project type in the
+					starting.
+					</li>
+					<br>
+					<li><div class="ui label">Project Folder</div> Location where user wants to store the project. For example: D://Projects/</li>
+					<br>
+					<li><div class="ui label">Training Image</div>  The plugin currently support stack of images in ImageJ stack format. We will copy the stack into the project directory
+					once the project is successfully created. 
+					</li>
+					<br>
+					<li><div class="ui label">Test Image</div>  It is optional field if you have seprate image stack for testing. You can even include them in end of training images instead of separate stack.
+					</li>
+					</ul>
+					</div>
+                    </div>  
+                   
                     </article>
-
-                    <hr />
-
-                    <article>
-
-                        <h3><a href="#">Create Project Screen</a></h3>
-                        <div class="ui grid">
-                            <div class="ui row">
-                                <div class="eight wide column">
-                                    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                                    <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-                                </div>
-                                <div class="eight wide column">
-                                  <img src="images/active/createproject.png" />
-                                </div>
-                            </div>
-                        </div>
-
-                       
-                    </article>
-                       <hr />
+                    <hr />                   
+                 
 					 <article>
-
                         <h3><a href="#">Open Project Screen</a></h3>
+						 <p>This Screen allows the user to load the existing project, user need to click open Project button and select the respective project file in json format(i.e Astrocytes.json). The project 
+						 will be loaded automatically.</p>		
                         <div class="ui grid">
                             <div class="ui row">
                                 <div class="eight wide column">
-                                    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                                    <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+                                  <img src="images/active/mainscreen.png" width="350"  />   
+                                </div>
+                                <div class="eight wide column">
+                                  <img src="images/active/openproject.png" />
+                                </div>
+                            </div>
+                        </div>                     
+                    </article>
+					  <hr />
+					  
+					 <article>
+                        <h3><a href="#">Filter Screen</a></h3>
+						<p>The filter screen </p>
+                        <div class="ui grid">
+                            <div class="ui row">
+                                 <div class="eight wide column">
+                                  <img src="images/active/links.png" width="350"  />   
+                                </div>
+                                <div class="eight wide column">
+                                  <img src="images/active/filter.png" />
+                                </div>
+                            </div>
+							<div class="sixteen wide column">						
+					<ul>
+					<li><div class="ui label">PREVIOUS</div> is used to load the previous filter.</li>
+					<br>
+					<li><div class="ui label">NEXT</div> is used to load the next filter. </li>
+					<br>
+					<li><div class="ui label">ENABLED</div> is used to disable the filter. The filters can be enabled </li>
+					<br>
+					<li><div class="ui label">COMPUTE</div> is used to computes the features on the image stack. The extracted features will be stored in disk.</li>
+					<br>
+					<li><div class="ui label">DEFAULT</div> is used to set the filters to its default value.</li>
+					<br>
+					<li><div class="ui label">SAVE</div> is used to save the current setting of filters.</li>
+					<br>
+					<li><div class="ui label">VIEW</div> is used to view the features extracted for each frame. This feature is still in progress </li>
+					</ul>
+					</div>
+                        </div>                     
+                    </article>
+					  <hr />
+					  
+						 <article>
+                        <h3><a href="#">Feature Extraction Screen</a></h3>
+                        <div class="ui grid">
+                            <div class="ui row">
+                                <div class="sixteen wide column">
+                                   <img src="images/active/feature.png" />
+                                </div>
+                                <div class="eight wide column">
+                                 
+                                </div>
+                            </div>
+                        </div>                     
+                    </article>
+					  <hr />
+					  
+						 <article>
+                        <h3><a href="#">Learning Screen</a></h3>
+                        <div class="ui grid">
+                            <div class="ui row">
+                                <div class="eight wide column">
+                                    <p>.</p>
+                                    <p>.</p>
                                 </div>
                                 <div class="eight wide column">
                                   <img src="images/active/createproject.png" />
                                 </div>
                             </div>
-                        </div>
-
-                        
+                        </div>                     
                     </article>
                 </div>
 
