@@ -128,9 +128,10 @@ feature extraction and machine learning algorithms. </p>
                         <div class="ui grid">
                             <div class="ui row">
                                 <div class="eight wide column">
-                                    <p>In order to use active segmentation, user need to get familiar with following four things:
+                                    <p>In order to use active segmentation, user need to get familiar with basic concepts of scale space theory and machine
+									learning. Scale space is the the representation of image at continous scale and user can configure the scale using the filters
+									user interface depending upon the problem. 
 									</p>
-									<p>. </p>
                                 </div>
                                 <div class="eight wide column">
                                     <img src="images/active/links1.png" />
@@ -141,11 +142,15 @@ feature extraction and machine learning algorithms. </p>
 						   <li><div class="ui label">Filters</div> The user can select or deselect filters depending on their problem. The active segmentation provide
 							default list of filters but users can add their customer filters. The user can even tune the parameters of filters using GUI.</li>
 						   <br>
-						   <li><div class="ui label">Feature Extraction</div> Researchers or users need to mark few samples of interest </li>
+						   <li><div class="ui label">Feature Extraction</div> Researchers or users need to mark few samples of interest for each of the probable class. The most common
+						   example is two class problem when user want to segment cell from background. It is an iterative processing and user can add new samples in each
+						   iteration in order to improve the segmentation results.</li>
 						   <br>
-						   <li><div class="ui label">Learning</div></li>
+						   <li><div class="ui label">Learning</div> Learners are the models that try to learn the function that maps feature space to classes space. The default learner in active segmentation is support vector machines. The user can change the learner and even modify the parameters
+						   of the learner from the learning screen</li>
 						   <br>
-						   <li><div class="ui label">Evaluation</div></li>
+						   <li><div class="ui label">Evaluation</div> We computed various evaluation metric like precision, Recall, Area under ROC curve and Area under PR curve in order to evaluate the robustness
+						   of the machine learning models</li>
 					    </ul>                   
                     </article>
 					<article>
